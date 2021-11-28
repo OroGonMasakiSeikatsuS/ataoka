@@ -1,14 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <header>
+      <h1 class="daimei">世界の映画を見てみよう！！</h1>
+      <h2 class="namae">Arashi Saki Koudai</h2>
+    </header>
+
+    <div></div>
+    <div class="footer">
+      <p>©️kokomademitekuretethankyoudayo, All Rights Reserved?</p>
     </div>
-    <router-view />
   </div>
 </template>
 
+<script>
+export default {
+  name: "App",
+  components: {},
+}
+</script>
+
 <style>
+#templete {
+  font-family: "Times New Roman", Times, serif;
+  background-color: antiquewhite;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,16 +33,38 @@
   color: #2c3e50;
 }
 
-#nav {
+#daimei {
+  background-color: linear-gradient(
+    180deg,
+    rgba(223, 137, 25, 0.918) 80%,
+    rgb(223, 137, 25, 0.918) 100px,
+    rgba(7, 56, 189, 0.918) 100px,
+    rgb(7, 56, 189, 0.918) 20%
+  );
+  text-align: center;
+  font-size: 50px;
   padding: 30px;
+  color: aliceblue;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+#namae {
+  text-align: right;
+  font-size: 30px;
+  padding: 20px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#footer {
+  color: aliceblue;
+  font-size: 20px;
+  background-color: linear-gradient(
+    180deg,
+    rgba(223, 137, 25, 0.918) 85%,
+    rgb(223, 137, 25, 0.918) 50px,
+    rgba(7, 56, 189, 0.918) 50px,
+    rgb(7, 56, 189, 0.918) 15%
+  );
+  text-align: center;
+  padding: 30px;
+  margin-top: 100px;
 }
 </style>
