@@ -6,6 +6,9 @@
     </header>
 
     <div></div>
+    <div>
+      <google-map />
+    </div>
     <div class="footer">
       <p>©️kokomademitekuretethankyoudayo, All Rights Reserved?</p>
     </div>
@@ -13,9 +16,13 @@
 </template>
 
 <script>
+import GoogleMap from "./components/GoogleMap.vue"
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    GoogleMap,
+  },
 }
 </script>
 
