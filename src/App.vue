@@ -20,12 +20,12 @@ export default {
 </script>
 
 <style>
-#templete {
+.templete {
   font-family: "Times New Roman", Times, serif;
   background-color: antiquewhite;
 }
 
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,8 +33,8 @@ export default {
   color: #2c3e50;
 }
 
-#daimei {
-  background-color: linear-gradient(
+.daimei {
+  background: linear-gradient(
     180deg,
     rgba(223, 137, 25, 0.918) 80%,
     rgb(223, 137, 25, 0.918) 100px,
@@ -47,16 +47,16 @@ export default {
   color: aliceblue;
 }
 
-#namae {
+.namae {
   text-align: right;
   font-size: 30px;
   padding: 20px;
 }
 
-#footer {
+.footer {
   color: aliceblue;
   font-size: 20px;
-  background-color: linear-gradient(
+  background: linear-gradient(
     180deg,
     rgba(223, 137, 25, 0.918) 85%,
     rgb(223, 137, 25, 0.918) 50px,
