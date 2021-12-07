@@ -27,7 +27,7 @@
       <google-map />
     </div>
     <div class="tab">
-      <router-link to="Quiz" class="router">Quiz!!!!</router-link>
+      <router-link to="Quiz" class="router">Quiz!!!</router-link>
     </div>
 
     <div class="footer">
