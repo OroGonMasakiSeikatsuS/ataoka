@@ -1,7 +1,4 @@
 <template>
-  <div>
-    <google-map />
-    <movieDetails />
   <div id="app">
     <header>
       <h1 class="daimei">世界の映画を見てみよう！！</h1>
