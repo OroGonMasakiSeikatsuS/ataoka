@@ -51,6 +51,7 @@ export default {
   font-family: "Times New Roman", Times, serif;
   background: black;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -70,6 +71,7 @@ export default {
   padding: 10px;
   margin: 10px;
 }
+
 .OMLS {
   font-weight: bold;
   font-size: 20px;
@@ -81,6 +83,7 @@ export default {
   text-align: left;
   border-radius: 10px;
 }
+
 .daimei {
   display: inline-block;
   text-align: center;
