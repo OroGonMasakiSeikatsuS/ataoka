@@ -1,7 +1,4 @@
 <template>
-  <div>
-    <google-map />
-    <movieDetails />
   <div id="app">
     <header>
       <div class="header-wrapper">
