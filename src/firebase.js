@@ -10,4 +10,15 @@ const firebaseConfig = {
   appId: "1:422153424926:web:223f850f6cdd06fe2a9e0f",
 }
 
+//  moviesのfirestore
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBvIEMEloczxRTVeY6lBO1cUJqEh2pwTS0",
+//   authDomain: "ataoka-334208.firebaseapp.com",
+//   projectId: "ataoka-334208",
+//   storageBucket: "ataoka-334208.appspot.com",
+//   messagingSenderId: "205098168586",
+//   appId: "1:205098168586:web:afe6cbcff017f323ea8af3",
+//   measurementId: "G-JL1BSQEB7P",
+// }
+
 firebase.initializeApp(firebaseConfig)
