@@ -86,7 +86,7 @@ export default {
   //collection 取得
   /*const snapshot = await db
   .collection('movies')
-  .where('country', '==', '') //countryで一致する配列を持ってくる？
+  // .where('country', '==', '') //countryで一致するコレクションを持ってくる？
   .get();
 snapshot.forEach(doc => {
   console.log(doc.id, '==', doc.data()); */
