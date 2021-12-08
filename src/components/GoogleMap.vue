@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="googleMap">
     <GmapMap
       :center="{ lat: 34.8891409884306, lng: 134.6604286952726 }"
       :zoom="7"
@@ -8,31 +8,22 @@
       style="width: 500px; height: 300px"
       @dragend="onDragEnd"
     >
-      <GmapInfoWindow
-        :options="infoOptions"
-        :position="infoWindowPos"
-        :opened="infoWinOpen"
-        @closeclick="infoWinOpen = false"
-      >
-        <div class="app">
-          <h1 class="movieTitle">映画のタイトル{{ title }}</h1>
-          <img src="" alt="" />
-          <h4 class="movieCate">
-            国：{{ country }}/ 主演:{{ actor }} / 監督：{{ director }}
-          </h4>
-          <p class="movieInfo">あらすじ{{ movieNote }}</p>
-        </div>
-        <!-- <p v-for="movie in movies" :key="movie.id"> 
-          {{ movie.text? }} -->
-      </GmapInfoWindow>
-      <GmapMarker
-        :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
-        :clickable="true"
-        :draggable="true"
-        @click="toggleInfoWindow(m)"
-      />
+      <div class="movies" v-for="(m, index) in movies" :key="m.title">
+        <GmapInfoWindow
+          :options="infoOptions"
+          :position="infoWindowPos"
+          :opened="infoWinOpen"
+          @closeclick="infoWinOpen = false"
+        >
+          <div v-html="contentStrings[index].contentString"></div>
+        </GmapInfoWindow>
+        <GmapMarker
+          :position="{ lat: m.lat, lng: m.lng }"
+          :clickable="true"
+          :draggable="true"
+          @click="toggleInfoWindow(m)"
+        />
+      </div>
     </GmapMap>
   </div>
 </template>
@@ -44,10 +35,9 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      markers: [
-        { position: { lat: 34.8891409884306, lng: 134.6604286952726 } },
-        { position: { lat: 34.920695542205486, lng: 127.69364298548562 } }, //光陽港海洋公園
-      ],
+      markers: [],
+      movies: [],
+      contentStrings: [],
       infoOptions: {
         pixelOffset: {
           width: 0,
@@ -63,7 +53,7 @@ export default {
       console.log("hoge")
     },
     toggleInfoWindow(marker) {
-      this.infoWindowPos = marker.position
+      this.infoWindowPos = { lat: marker.lat, lng: marker.lng }
       this.infoWinOpen = true
     },
   },
@@ -71,7 +61,6 @@ export default {
     firebase
       .firestore()
       .collection("movies")
-      .where("country", "==", "")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
@@ -80,6 +69,22 @@ export default {
             ...doc.data(),
           })
         })
+      })
+      .then(() => {
+        for (let i = 0; i < this.movies.length; i++) {
+          const contentString =
+            `<div class="movie">` +
+            `<h1 class="movieTitle">${this.movies[i].title}</h1>` +
+            `<img src="" alt="" />` +
+            `<h4 class="movieCate">` +
+            `国：${this.movies[i].country}/ 主演:${this.movies[i].actor} / 監督：${this.movies[i].director}/ジャンル：${this.movies[i].genre}` +
+            `</h4>` +
+            `<p class="movieInfo">あらすじ：${this.movies[i].movieNote}（Filmarksより引用）</p>` +
+            `</div>`
+          this.contentStrings.push({
+            contentString: contentString,
+          })
+        }
       })
   },
   //const db = firebase.firestore() //document取得
@@ -94,7 +99,7 @@ snapshot.forEach(doc => {
 </script>
 
 <style>
-.app {
+.movie {
   width: 20rem;
   text-align: center;
   background-color: black;
