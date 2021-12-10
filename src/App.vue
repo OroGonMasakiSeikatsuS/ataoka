@@ -31,7 +31,7 @@
     </div>
 
     <div class="footer">
-      <p>©️kokomademitekuretethankyoudayo, All Rights Reserved?</p>
+      <p>©️kokomademitekuretethankyoudayou, All Rights Reserved?</p>
     </div>
   </div>
 </template>
