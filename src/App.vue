@@ -10,7 +10,7 @@
         </div>
       </div>
       <div>
-        <router-view />
+        <!-- <router-view /> -->
       </div>
     </header>
     <div class="box">
