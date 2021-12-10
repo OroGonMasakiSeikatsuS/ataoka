@@ -1,3 +1,4 @@
+'''
 <template>
   <div>
     <h1>クイズ</h1>
@@ -12,6 +13,19 @@
         {{ index + 1 }}. {{ answer }}
       </button>
     </div>
+    <div v-if="computed">
+      <h1>結果発表</h1>
+      <div v-for="(question, index) in this.questions" :key="index">
+        <div>{{ question.question }}</div>
+        <ul>
+          <li v-for="answer in question.answers" :key="answer">{{ answer }}</li>
+        </ul>
+        <span v-if="question.answer == answers[index]">正解</span>
+        <span v-else>
+          不正解<br />正解は「{{ question.answers[question.answer] }}」でした。
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,6 +33,7 @@
 export default {
   data() {
     return {
+      answers: [],
       questionIndex: 0,
       questions: [
         {
@@ -53,22 +68,17 @@ export default {
     currentQuestion: function () {
       return this.questions[this.questionIndex]
     },
+    completed: function () {
+      return this.questions.length == this.answers.length
+    },
   },
-  addAnswer: function (index) {
-    this.answers.push(index)
-
-    if (this.questions.length == this.answers.length) {
-      var correctCount = 0
-      for (var i in this.answers) {
-        var answer = this.answers[i]
-        if (answer == this.questions[i].answer) {
-          correctCount++
-        }
+  methods: {
+    addAnswer: function (index) {
+      this.answers.push(index)
+      if (!this.completed) {
+        this.questionIndex++
       }
-      alert(correctCount + "問正解です！")
-    } else {
-      this.questionIndex++
-    }
+    },
   },
 }
 </script>
