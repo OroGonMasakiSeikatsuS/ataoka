@@ -3,7 +3,7 @@
     <header>
       <div class="header-wrapper">
         <div class="OMLS">OMLS</div>
-        <h1 class="daimei">世界の映画を見てみよう！！</h1>
+        <h1 class="daimei">世界の映画を見てみよう！！！</h1>
         <div class="tab">
           <router-link to="/" class="router">home</router-link> |
           <router-link to="Quiz" class="router">Quiz</router-link>
