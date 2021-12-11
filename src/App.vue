@@ -3,7 +3,9 @@
     <header>
       <div class="header-wrapper">
         <div class="OMLS">OMLS</div>
-        <h1 class="daimei">世界の映画を見てみよう！！！</h1>
+
+        <h1 class="daimei">世界の映画を見てみよう！！</h1>
+
         <div class="tab">
           <router-link to="/" class="router">home</router-link> |
           <router-link to="Quiz" class="router">Quiz</router-link>
@@ -27,7 +29,9 @@
       <google-map />
     </div>
     <div class="tab">
+
       <router-link to="Quiz" class="router">Quiz!!!</router-link>
+
     </div>
 
     <div class="footer">
@@ -38,7 +42,6 @@
 
 <script>
 import GoogleMap from "./components/GoogleMap.vue"
-
 export default {
   name: "App",
   components: {
@@ -91,6 +94,7 @@ export default {
   font-size: 30px;
   color: white;
   padding: 0px 250px;
+
 }
 .tab {
   text-align: right;
@@ -119,12 +123,12 @@ export default {
   height: 50%;
 }
 
+
 .google-map {
   float: none;
   color: white;
   padding: 30px;
 }
-
 .footer {
   color: aliceblue;
   font-size: 20px;
