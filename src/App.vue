@@ -3,7 +3,9 @@
     <header>
       <div class="header-wrapper">
         <div class="OMLS">OMLS</div>
+
         <h1 class="daimei">世界の映画を見てみよう！！</h1>
+
         <div class="tab">
           <router-link to="/" class="router">home</router-link> |
           <router-link to="Quiz" class="router">Quiz</router-link>
@@ -27,7 +29,9 @@
       <google-map />
     </div>
     <div class="tab">
-      <router-link to="Quiz" class="router">Quiz!!!!</router-link>
+
+      <router-link to="Quiz" class="router">Quiz!!!</router-link>
+
     </div>
 
     <div class="footer">
@@ -51,6 +55,7 @@ export default {
   font-family: "Times New Roman", Times, serif;
   background: black;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -70,6 +75,7 @@ export default {
   padding: 10px;
   margin: 10px;
 }
+
 .OMLS {
   font-weight: bold;
   font-size: 20px;
@@ -81,12 +87,14 @@ export default {
   text-align: left;
   border-radius: 10px;
 }
+
 .daimei {
   display: inline-block;
   text-align: center;
   font-size: 30px;
   color: white;
   padding: 0px 250px;
+
 }
 .tab {
   text-align: right;
@@ -114,6 +122,8 @@ export default {
 .cinema-pic {
   height: 50%;
 }
+
+
 .google-map {
   float: none;
   color: white;
